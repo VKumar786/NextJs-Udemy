@@ -4,22 +4,58 @@ import NewPost from "./NewPost";
 import Modal from "./Modal";
 import styles from "./PostsList.module.css";
 
-const PostList = () => {
-  const [modalIsVisible, setModalIsVisible] = useState(false);
-  const [data, setData] = useState({ body: "", name: "" });
+const PostList = ({ isVisible, setIsVisible, posts, setPosts, isLoading }) => {
+  const [data, setData] = useState({ author: "", content: "" });
+
+  let modalContent = (
+    <Modal setIsVisible={setIsVisible}>
+      <NewPost
+        data={data}
+        setData={setData}
+        onCancel={() => {
+          setIsVisible(false);
+        }}
+        setPosts={setPosts}
+      />
+    </Modal>
+  );
 
   return (
     <>
-      <button onClick={() => setModalIsVisible(true)}>toggle</button>
-      {modalIsVisible && (
-        <Modal setIsVisible={setModalIsVisible}>
-          <NewPost data={data} setData={setData} />
-        </Modal>
-      )}
+      {isVisible && modalContent}
       <div className={styles.posts}>
-        <Post author={data.name} content={data.body} />
-        <Post author="vishal" content="React.js is Frontend dev" />
-        <Post author="vivek" content="Full Stack Dev" />
+        {posts?.map((post) => {
+          return (
+            <Post
+              key={post.author}
+              author={post.author}
+              content={post.content}
+            />
+          );
+        })}
+        {isLoading && (
+          <div
+            style={{
+              textAlign: "center",
+              color: "white",
+              gridColumn: "span 3",
+            }}
+          >
+            <h2>Loading...</h2>
+          </div>
+        )}
+        {posts.length === 0 && !isLoading && (
+          <div
+            style={{
+              textAlign: "center",
+              color: "white",
+              gridColumn: "span 3",
+            }}
+          >
+            <h2>There are no posts yet.</h2>
+            <p>Start adding some!</p>
+          </div>
+        )}
       </div>
     </>
   );
