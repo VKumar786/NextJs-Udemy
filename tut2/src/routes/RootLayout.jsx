@@ -5,7 +5,7 @@ import MainHeader from "../components/MainHeader";
 const RootLayout = () => {
   return (
     <>
-      <MainHeader onCreatePost={() => {}} />
+      <MainHeader />
       <Outlet />
     </>
   );

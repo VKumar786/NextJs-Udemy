@@ -1,39 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Post from "./Post";
-import NewPost from "./NewPost";
-import Modal from "./Modal";
 import styles from "./PostsList.module.css";
 
-const PostList = ({ isVisible, setIsVisible, posts, setPosts, isLoading }) => {
-  const [data, setData] = useState({ author: "", content: "" });
+const PostList = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [posts, setPosts] = useState([
+    { author: "vishal", content: "learning nextjs" },
+  ]);
 
-  let modalContent = (
-    <Modal setIsVisible={setIsVisible}>
-      <NewPost
-        data={data}
-        setData={setData}
-        onCancel={() => {
-          setIsVisible(false);
-        }}
-        setPosts={setPosts}
-      />
-    </Modal>
-  );
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("http://localhost:8080/posts");
+      const data = await res.json();
+      setPosts(data.posts);
+      setIsLoading(false);
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
-      {isVisible && modalContent}
       <div className={styles.posts}>
-        {posts?.map((post) => {
-          return (
-            <Post
-              key={post.author}
-              author={post.author}
-              content={post.content}
-            />
-          );
-        })}
-        {isLoading && (
+        {isLoading ? (
           <div
             style={{
               textAlign: "center",
@@ -43,8 +31,7 @@ const PostList = ({ isVisible, setIsVisible, posts, setPosts, isLoading }) => {
           >
             <h2>Loading...</h2>
           </div>
-        )}
-        {posts.length === 0 && !isLoading && (
+        ) : posts.length === 0 ? (
           <div
             style={{
               textAlign: "center",
@@ -55,6 +42,16 @@ const PostList = ({ isVisible, setIsVisible, posts, setPosts, isLoading }) => {
             <h2>There are no posts yet.</h2>
             <p>Start adding some!</p>
           </div>
+        ) : (
+          posts?.map((post) => {
+            return (
+              <Post
+                key={post.author}
+                author={post.author}
+                content={post.content}
+              />
+            );
+          })
         )}
       </div>
     </>

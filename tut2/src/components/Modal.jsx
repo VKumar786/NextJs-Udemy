@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./Modal.module.css";
+import { useNavigate } from "react-router-dom";
 
-const Modal = ({ setIsVisible, children }) => {
+const Modal = ({ children }) => {
+  const navigate = useNavigate();
+  const handleCancel = () => {
+    navigate("..");
+  };
+
   return (
     <>
-      <div className={styles.backdrop} onClick={() => setIsVisible(false)} />
+      <div className={styles.backdrop} onClick={handleCancel} />
 
       <dialog open={true} className={styles.modal}>
         {children}
