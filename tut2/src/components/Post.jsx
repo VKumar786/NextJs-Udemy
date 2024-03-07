@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./Post.module.css";
+import { Link } from "react-router-dom";
 
-const Post = ({ author, content }) => {
+const Post = ({ id, author, content }) => {
   return (
-    <div className={styles.post}>
-      <p className={styles.author}>{author}</p>
-      <p className={styles.text}>{content}</p>
-    </div>
+    <Link to={`/${id}`}>
+      <div className={styles.post}>
+        <p className={styles.author}>{author}</p>
+        <p className={styles.text}>{content}</p>
+      </div>
+    </Link>
   );
 };
 

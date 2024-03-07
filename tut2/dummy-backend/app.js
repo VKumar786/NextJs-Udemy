@@ -28,6 +28,23 @@ app.get("/posts/:id", async (req, res) => {
   res.json({ post });
 });
 
+app.post("/posts/:id", async (req, res) => {
+  const postId = req.params.id;
+  const updatedPostData = req.body;
+  let storedPosts = await getStoredPosts();
+
+  storedPosts = storedPosts.map((post) => {
+    if (post.id === postId) {
+      return { ...post, ...updatedPostData };
+    }
+    return post;
+  });
+
+  await storePosts(storedPosts);
+  res.json({ message: "Updated post successfully." });
+});
+
+
 app.post("/posts", async (req, res) => {
   const existingPosts = await getStoredPosts();
   const postData = req.body;

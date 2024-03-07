@@ -22,13 +22,7 @@ const PostList = () => {
           </div>
         ) : (
           posts?.map((post) => {
-            return (
-              <Post
-                key={post.author}
-                author={post.author}
-                content={post.content}
-              />
-            );
+            return <Post key={post.author} {...post} />;
           })
         )}
       </div>
