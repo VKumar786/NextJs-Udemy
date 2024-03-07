@@ -1,37 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 import styles from "./PostsList.module.css";
+import { useLoaderData } from "react-router-dom";
 
 const PostList = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [posts, setPosts] = useState([
-    { author: "vishal", content: "learning nextjs" },
-  ]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("http://localhost:8080/posts");
-      const data = await res.json();
-      setPosts(data.posts);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
+  const posts = useLoaderData();
 
   return (
     <>
       <div className={styles.posts}>
-        {isLoading ? (
-          <div
-            style={{
-              textAlign: "center",
-              color: "white",
-              gridColumn: "span 3",
-            }}
-          >
-            <h2>Loading...</h2>
-          </div>
-        ) : posts.length === 0 ? (
+        {posts.length === 0 ? (
           <div
             style={{
               textAlign: "center",
