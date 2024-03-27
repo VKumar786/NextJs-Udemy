@@ -7,17 +7,18 @@ import styles from "./image-picker.module.css";
 import Image from "next/image";
 
 const ImagePicker = ({ label, name }) => {
-  const [pickedImage, setPickedImage] = useState(null);
+  const [pickedImage, setPickedImage] = useState();
   const imageInputRef = useRef();
 
   const handleImageChange = (e) => {
+    e.preventDefault();
     const file = e.target.files[0];
 
     if (!file) return;
 
     const fileReader = new FileReader();
 
-    fileReader.onload = () => {
+    fileReader.onloadend = () => {
       setPickedImage(fileReader.result);
     };
 
@@ -30,12 +31,14 @@ const ImagePicker = ({ label, name }) => {
       <div className={styles.controls}>
         <div className={styles.preview}>
           {!pickedImage && <p>No Image Picked yet</p>}
-          {pickedImage && <Image  src={pickedImage} alt="image selected by user"/>}
+          {pickedImage?.length > 0 && (
+            <Image src={pickedImage} alt="image selected by user" fill />
+          )}
         </div>
         <input
           type="file"
           id={name}
-          accept="image/png, image/jpeg, image/jpg"
+          accept="image/*"
           name={name}
           className={styles.input}
           ref={imageInputRef}

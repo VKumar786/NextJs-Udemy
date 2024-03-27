@@ -15,3 +15,9 @@
 
 - /blog/1
   ({param})
+
+# xss attack prevention
+  __dangerousHTML
+
+# initialize db
+  node initdb.js
