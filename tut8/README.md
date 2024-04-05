@@ -1,0 +1,1 @@
+Staic Side Generation
