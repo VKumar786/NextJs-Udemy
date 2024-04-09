@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Event 1",
+      "location": "Location 1",
+      "date": "2022-01-01",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "2",
+      "title": "Event 2",
+      "location": "Location 2",
+      "date": "2022-02-02",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "3",
+      "title": "Event 3",
+      "location": "Location 3",
+      "date": "2022-03-03",
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+}
