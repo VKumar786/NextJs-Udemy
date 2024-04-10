@@ -1,25 +1,28 @@
 {
-  "events": [
+  "comments": [
     {
       "id": "1",
-      "title": "Event 1",
-      "location": "Location 1",
-      "date": "2022-01-01",
-      "image": "https://via.placeholder.com/150"
+      "email": "dummy1@example.com",
+      "name": "Dummy Name 1",
+      "text": "Dummy text 1"
     },
     {
       "id": "2",
-      "title": "Event 2",
-      "location": "Location 2",
-      "date": "2022-02-02",
-      "image": "https://via.placeholder.com/150"
+      "email": "dummy2@example.com",
+      "name": "Dummy Name 2",
+      "text": "Dummy text 2"
     },
     {
       "id": "3",
-      "title": "Event 3",
-      "location": "Location 3",
-      "date": "2022-03-03",
-      "image": "https://via.placeholder.com/150"
+      "email": "dummy3@example.com",
+      "name": "Dummy Name 3",
+      "text": "Dummy text 3"
+    },
+    {
+      "id": "2024-04-10T11:17:06.953Z",
+      "email": "pevegiv@mailinator.com",
+      "name": "Brendan Mejia",
+      "text": "Ut similique id inc"
     }
   ]
 }
