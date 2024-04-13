@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import classes from "./newsletter-registration.module.css";
+import { useNotification } from "../../context/NotificationContext";
 
 function NewsletterRegistration() {
+  const { showNotification, hideNotification } = useNotification();
   const emailInputRef = useRef();
   async function registrationHandler(event) {
     event.preventDefault();
@@ -19,7 +21,14 @@ function NewsletterRegistration() {
         },
       })
     ).json();
-    console.warn(data.message);
+    showNotification({
+      status: "success",
+      title: "Registration successful!",
+      message: data.message,
+    });
+    setTimeout(() => {
+      hideNotification(null);
+    }, 3000);
   }
 
   return (

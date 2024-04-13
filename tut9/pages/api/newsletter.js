@@ -1,4 +1,4 @@
-import { MongoClient } from "mongodb";
+// import { MongoClient } from "mongodb";
 
 async function handler(req, res) {
   if (req.method !== "POST")
@@ -11,13 +11,13 @@ async function handler(req, res) {
   }
 
   // Store email in a database
-  const client = await MongoClient.connect(
-    "mongodb://localhost:27017/myNextjs"
-  );
-  const db = client.db();
-  const emailsCollection = db.collection("emails");
-  const result = await emailsCollection.insertOne({ email });
-  client.close();
+  // const client = await MongoClient.connect(
+  //   "mongodb://localhost:27017/myNextjs"
+  // );
+  // const db = client.db();
+  // const emailsCollection = db.collection("emails");
+  // const result = await emailsCollection.insertOne({ email });
+  // client.close();
   res.status(201).json({ message: "Signed up!" });
   return;
 }
