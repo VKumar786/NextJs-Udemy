@@ -57,3 +57,8 @@ kf    return (
 
 
 useSWR()
+
+
+# Next Export vs NEXT BUILD
+
+> image -> layout == responsive
