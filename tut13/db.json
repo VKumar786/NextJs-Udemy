@@ -1,0 +1,32 @@
+{
+  "meetups": [
+    {
+      "id": "1",
+      "image": "https://images.pexels.com/photos/1073785/pexels-photo-1073785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "First Meetup",
+      "address": "123 First St, Example City, EX 12345",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi unde deleniti perferendis voluptate illum earum molestias quidem, cum officiis eos, ex soluta. Similique dignissimos asperiores aliquid incidunt illo consequuntur vel!"
+    },
+    {
+      "id": "2",
+      "image": "https://images.pexels.com/photos/11446367/pexels-photo-11446367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Second Meetup",
+      "address": "456 Second St, Example City, EX 12345",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi unde deleniti perferendis voluptate illum earum molestias quidem, cum officiis eos, ex soluta. Similique dignissimos asperiores aliquid incidunt illo consequuntur vel!"
+    },
+    {
+      "id": "3",
+      "image": "https://images.pexels.com/photos/2896301/pexels-photo-2896301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Third Meetup",
+      "address": "789 Third St, Example City, EX 12345",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi unde deleniti perferendis voluptate illum earum molestias quidem, cum officiis eos, ex soluta. Similique dignissimos asperiores aliquid incidunt illo consequuntur vel!"
+    },
+    {
+      "id": "16455d75-e09f-436e-8b87-03d9836809f6",
+      "title": "yo",
+      "image": "https://images.pexels.com/photos/6845638/pexels-photo-6845638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "address": "this is yo yo ",
+      "description": "asdlfkjasdlfkj klasjd kljasdfkljasdkfasdf"
+    }
+  ]
+}
