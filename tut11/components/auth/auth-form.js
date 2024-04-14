@@ -1,5 +1,6 @@
 import { useState } from "react";
 import classes from "./auth-form.module.css";
+import { signIn } from "next-auth/react";
 
 function AuthForm() {
   const [data, setData] = useState({
@@ -30,6 +31,8 @@ function AuthForm() {
         const data = await res.json();
         alert(data.message || "Something went wrong!");
       }
+    } else {
+      signIn("credentials", { redirect: false, ...data });
     }
   }
 
