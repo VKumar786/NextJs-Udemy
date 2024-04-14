@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "8e3a775e-4615-4281-bef2-8d530f5379f5",
+      "email": "test@sunbasedata.com",
+      "password": "$2a$12$6Ahf03uKFPeDWTbvo9kvWeBzge4M8XSwWU5tl8k62XftcnpGg7CyO"
+    },
+    {
+      "id": "480d5661-fe20-4c84-bb5b-b7eae902d025",
+      "email": "test@sunbaseda1ta.com",
+      "password": "$2a$12$D8oaFnBIn9veLTU.6ry1geEiIryhpagL8WVNLGLQw8AYy71YjTSlW"
+    }
+  ]
+}
